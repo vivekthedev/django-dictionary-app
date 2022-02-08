@@ -11,10 +11,10 @@
         <h1 class="display-4">PyDictionary</h1>
         <p class="lead">This is a simple Dictionary app using Django and PyDictionary Module</p>
         <hr class="my-4">
-        <form action="/" method="post">
+        <form action="/" method="post" style="width: 40%;margin: 0 auto;">
             {%csrf_token%}
             {{form.wordInput}}
-            <input type="submit" value="Search" name="search" class="btn btn-primary btn-lg btn-block">
+            <input type="submit" value="Search" name="search" class="btn btn-primary btn-sm btn-block" style="margin-top: 10px; width: 50%;">
         </form>
         <br><br>
         <div class="alert alert-primary" role="alert">

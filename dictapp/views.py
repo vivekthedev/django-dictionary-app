@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import Word
 from PyDictionary import PyDictionary
+
 # Create your views here.
+
 
 def index(request):
     form = Word()
     meaning = ""
     synonym = ""
     antonym = ""
-    dictionary=PyDictionary()
+    dictionary = PyDictionary()
 
     if request.method == "POST":
         form = Word(request.POST)
@@ -17,8 +19,9 @@ def index(request):
             meaning = dictionary.meaning(word)
             synonym = dictionary.synonym(word)
             antonym = dictionary.antonym(word)
-            meaning, synonym, antonym = str(meaning), str(synonym), str(antonym) 
-            redirect('/')
+            meaning, synonym, antonym = str(meaning), str(synonym), str(antonym)
+            form = Word()
+            redirect("/")
 
-    context = {'form' : form, 'meaning' : meaning, 'synonym' : synonym, 'antonym' : antonym}
-    return render(request, 'dictapp/index.html', context)
+    context = {"form": form, "meaning": meaning, "synonym": synonym, "antonym": antonym}
+    return render(request, "dictapp/index.html", context)
