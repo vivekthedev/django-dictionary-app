@@ -1,4 +1,6 @@
 # Dictionary with Python/Django
+
+![](./screen.png)
 Dictionary Web App made using Django and Pydictionary module in Python.
 The dictionary app uses PyDictionary API which is a bit slow.
 
